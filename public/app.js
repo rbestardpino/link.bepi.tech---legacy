@@ -23,7 +23,7 @@ const app = new Vue({
       if (response.ok) {
         const result = await response.json();
         this.formVisible = false;
-        this.created = `https://bep-sh.herokuapp.com/${result.slug}`;
+        this.created = `http://link.bepi.tech/${result.slug}`;
       } else if (response.status === 429) {
         this.error =
           "You are sending too many requests. Try again in 30 seconds.";
