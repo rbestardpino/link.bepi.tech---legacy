@@ -4,7 +4,7 @@
   "description": "link.bepi.tech is an open-source easy to use url shortener.",
   "main": "index.js",
   "scripts": {
-    "start": "node --trace-deprecation index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [
