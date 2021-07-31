@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const result = await response.json()
         document.getElementById(
           'shortened'
-        ).innerHTML = `Shortened link: <a href="https://link.bepi.tech/${result.slug}">http://link.bepi.tech/${result.slug}</a>`
+        ).innerHTML = `Shortened link: <a href="https://link.bepi.tech/${result.slug}">https://link.bepi.tech/${result.slug}</a>`
       } else if (response.status === 429) {
         error = 'You are sending too many requests. Try again in 30 seconds.'
       } else {
