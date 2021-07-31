@@ -10,12 +10,25 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
+      content="script-src 'self' http://xxxx 'unsafe-inline' 'unsafe-eval';"
     />
 
-    <link rel="stylesheet" href="assets/boxicons-2.0.9/css/boxicons.css" />
-    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" />
-    <script src="assets/materialize/js/materialize.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" href="assets/boxicons-2.0.9/css/boxicons.min.css" /> -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="materialize.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
@@ -53,10 +66,14 @@
       <div class="modal-footer">
         <a
           href="https://github.com/bepi-tech/link.bepi.tech"
+          target="_blank"
           class="waves-effect waves-light btn modal-close"
           ><i class="bx bxl-github left"></i>GitHub</a
         >
-        <a href="#" class="waves-effect waves-light btn modal-close"
+        <a
+          href="#"
+          class="waves-effect waves-light btn modal-close"
+          target="_blank"
           ><i class="bx bx-donate-heart left"></i>Contribute</a
         >
       </div>
@@ -79,10 +96,7 @@
               <label for="slug">Custom slug (optional)</label>
             </div>
           </form>
-          <a
-            id="submit-shorten-form"
-            class="waves-effect waves-light btn"
-            onclick="submit()"
+          <a id="submit-shorten-form" class="waves-effect waves-light btn"
             ><i class="bx bx-send left"></i>Shorten URL</a
           >
         </div>
@@ -109,6 +123,7 @@
                 <a
                   class="grey-text text-lighten-3"
                   href="https://github.com/bepi-tech/link.bepi.tech"
+                  target="_blank"
                   >Source code</a
                 >
               </li>
@@ -119,13 +134,17 @@
       <div class="footer-copyright">
         <div class="container">
           Copyright (c) 2021 BePi
-          <a class="grey-text text-lighten-4 right" href="https://bepi.tech/"
+          <a
+            class="grey-text text-lighten-4 right"
+            href="https://bepi.tech/"
+            target="_blank"
             >BePi</a
           >
         </div>
       </div>
     </footer>
 
+    <!-- <script src="assets/materialize/js/materialize.min.js"></script> -->
     <script src="assets/js/app.js"></script>
   </body>
 </html>
