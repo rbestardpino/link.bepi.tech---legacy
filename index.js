@@ -58,20 +58,18 @@ app.post(
   }),
   async (req, res, next) => {
     let { slug, url } = req.body
+    console.log(slug, url)
     try {
       await schema.validate({
         slug,
         url,
       })
-      if (url.includes('bepi.tech')) {
-        throw new Error('Very funny...')
-      }
       if (!slug) {
         slug = nanoid(5)
       } else {
         const existing = await urls.findOne({ slug })
         if (existing) {
-          throw new Error('Slug in use.')
+          throw new Error('Slug in use')
         }
       }
       slug = slug.toLowerCase()

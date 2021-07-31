@@ -3,38 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bep.sh</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>link.bepi.tech</title>
+    <meta
+      name="description"
+      content="link.bepi.tech is an open-source and easy to use URL shortener."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+
+    <link rel="stylesheet" href="assets/boxicons-2.0.9/css/boxicons.css" />
+    <link rel="stylesheet" href="assets/materialize/css/materialize.min.css" />
+    <script src="assets/materialize/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <main id="app">
-      <form class="form" v-if="formVisible" @submit.prevent="createUrl()">
-        <div v-if="error" class="error">{{error}}</div>
-        <input
-          class="input"
-          type="text"
-          v-model="url"
-          name="url"
-          id="url"
-          placeholder="enter a url"
-        />
-        <input
-          class="input"
-          type="text"
-          v-model="slug"
-          name="slug"
-          id="slug"
-          placeholder="enter a slug"
-        />
-        <button type="submit" class="create">create</button>
-      </form>
-      <div v-if="created">
-        <p class="created">
-          Your short url is: <a :href="created">{{created}}</a>
-        </p>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-wrapper">
+        <a class="brand-logo center">link.bepi.tech</a>
+      </div>
+    </nav>
+
+    <!-- FAB -->
+    <div class="fixed-action-btn">
+      <a href="#about-modal" class="btn-floating btn-large red modal-trigger">
+        <i class="bx bx-info-circle"></i>
+      </a>
+    </div>
+
+    <!-- ABOUT MODAL -->
+    <div id="about-modal" class="modal">
+      <div class="modal-content">
+        <h4>link.bepi.tech</h4>
+        <p>link.bepi.tech is an open-source and easy to use URL shortener.</p>
+        <h5>Advantages over other URL Shorteners:</h5>
+        <ul>
+          <li>It's FREE</li>
+          <li>It's extremely simple and easy to use</li>
+          <li>
+            It's open source, so you can check that your data isn't being used
+            to gain profit
+          </li>
+          <li>It's secure and reliable</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a
+          href="https://github.com/bepi-tech/link.bepi.tech"
+          class="waves-effect waves-light btn modal-close"
+          ><i class="bx bxl-github left"></i>GitHub</a
+        >
+        <a href="#" class="waves-effect waves-light btn modal-close"
+          ><i class="bx bx-donate-heart left"></i>Contribute</a
+        >
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main>
+      <div class="container">
+        <div class="row">
+          <h1></h1>
+          <form autocomplete="off" id="shorten-form">
+            <div class="input-field">
+              <i class="bx bx-link-alt prefix"></i>
+              <input id="url" type="text" />
+              <label for="url">URL (required)</label>
+            </div>
+            <div class="input-field">
+              <i class="bx bx-arrow-to-right prefix"></i>
+              <input id="slug" type="text" />
+              <label for="slug">Custom slug (optional)</label>
+            </div>
+          </form>
+          <a
+            id="submit-shorten-form"
+            class="waves-effect waves-light btn"
+            onclick="submit()"
+            ><i class="bx bx-send left"></i>Shorten URL</a
+          >
+        </div>
+        <div class="row">
+          <h4 id="shortened"></h4>
+        </div>
       </div>
     </main>
-    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
-    <script src="app.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">link.bepi.tech</h5>
+            <p class="grey-text text-lighten-4">
+              link.bepi.tech is an open-source and easy to use URL shortener.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/bepi-tech/link.bepi.tech"
+                  >Source code</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Copyright (c) 2021 BePi
+          <a class="grey-text text-lighten-4 right" href="https://bepi.tech/"
+            >BePi</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
