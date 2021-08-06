@@ -2,7 +2,7 @@
 
 link.bepi.tech is an open-source and easy to use URL shortener.
 
-You can use it [here](http://link.bepi.tech/).
+You can use it [here](https://link.bepi.tech/).
 
 ## Advantages over other URL Shorteners:
 
